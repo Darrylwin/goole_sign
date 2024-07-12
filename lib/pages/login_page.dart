@@ -7,25 +7,34 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[300],
-      body: SafeArea(
+      body:  SafeArea(
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             // logo
-            Center(
+            const Center(
               child: Icon(
                 Icons.lock,
                 size: 100,
               ),
             ),
 
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
 
             // welcome back you have been missed
+            Text(
+              "welcome back you've been missed",
+              style: TextStyle(color: Colors.grey[700],
+              fontSize: 16),
+            ),
+
+            const SizedBox(
+              height: 25,
+            ),
 
             // username textfiled
 
