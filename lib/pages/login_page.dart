@@ -5,6 +5,44 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: Colors.grey[300],
+      body: SafeArea(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 50,
+            ),
+            // logo
+            Center(
+              child: Icon(
+                Icons.lock,
+                size: 100,
+              ),
+            ),
+
+            SizedBox(
+              height: 50,
+            ),
+
+            // welcome back you have been missed
+
+            // username textfiled
+
+            // password textfield
+
+            // forgot password
+
+            // sign in button
+
+            // or contiue with
+
+            // google - apple sign in button
+
+            // not a member ? register now
+          ],
+        ),
+      ),
+    );
   }
 }
