@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "954689905286",
+    "project_id": "signin-40c9b",
+    "storage_bucket": "signin-40c9b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:954689905286:android:3fdf804c170e39bac9a707",
+        "android_client_info": {
+          "package_name": "com.example.go"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyvqDZ51LyfGZVoU5bnZViieihjUE4U9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
