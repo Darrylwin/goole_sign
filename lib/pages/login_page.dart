@@ -58,7 +58,27 @@ class LoginPage extends StatelessWidget {
               hintText: "Password",
             ),
 
+            const SizedBox(
+              height: 10,
+            ),
+
             // forgot password
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 25.0,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    "Forgot Password ?",
+                    style: TextStyle(
+                      color: Colors.grey.shade600,
+                    ),
+                  ),
+                ],
+              ),
+            ),
 
             // sign in button
 
