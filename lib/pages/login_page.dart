@@ -6,9 +6,7 @@ class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
   // sign user in method
-  SignUserIn() {
-    
-  }
+  SignUserIn() {}
 
   // text editing controllers
   final usernameController = TextEditingController();
@@ -91,9 +89,43 @@ class LoginPage extends StatelessWidget {
             ),
 
             // sign in button
-            MyButton(onTap: SignUserIn() => ,),
+            MyButton(
+              onTap: SignUserIn(),
+            ),
+
+            const SizedBox(
+              height: 50,
+            ),
 
             // or contiue with
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Divider(
+                      thickness: 5,
+                      color: Colors.grey[400],
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Text(
+                      "Or continue with",
+                      style: TextStyle(
+                        color: Colors.grey.shade700,
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Divider(
+                      thickness: 5,
+                      color: Colors.grey[400],
+                    ),
+                  ),
+                ],
+              ),
+            ),
 
             // google - apple sign in button
 
