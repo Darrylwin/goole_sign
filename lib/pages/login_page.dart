@@ -35,6 +35,9 @@ class _LoginPageState extends State<LoginPage> {
       email: emailController.text,
       password: passwordController.text,
     );
+
+    // pop the circle
+    Navigator.pop(context);
   }
 
   // show loading circle
