@@ -21,6 +21,7 @@ class LoginPage extends StatelessWidget {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(
                 height: 20,
@@ -140,7 +141,7 @@ class LoginPage extends StatelessWidget {
                 children: [
                   // google button
                   SquareTile(
-                    imagePath: '../images/google.png',
+                    imagePath: 'assets/images/google.png',
                   ),
 
                   const SizedBox(
@@ -149,7 +150,7 @@ class LoginPage extends StatelessWidget {
 
                   // google button
                   SquareTile(
-                    imagePath: '../images/apple.png',
+                    imagePath: 'assets/images/apple.png',
                   ),
                 ],
               ),
