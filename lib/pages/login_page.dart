@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goole_sign/components/my_button.dart';
 import 'package:goole_sign/components/my_textfield.dart';
 
 class LoginPage extends StatelessWidget {
@@ -80,7 +81,12 @@ class LoginPage extends StatelessWidget {
               ),
             ),
 
+            const SizedBox(
+              height: 25,
+            ),
+
             // sign in button
+            MyButton(),
 
             // or contiue with
 
