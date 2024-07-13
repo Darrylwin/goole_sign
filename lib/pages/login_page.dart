@@ -5,6 +5,11 @@ import 'package:goole_sign/components/my_textfield.dart';
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
 
+  // sign user in method
+  SignUserIn() {
+    
+  }
+
   // text editing controllers
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
@@ -86,7 +91,7 @@ class LoginPage extends StatelessWidget {
             ),
 
             // sign in button
-            MyButton(),
+            MyButton(onTap: SignUserIn() => ,),
 
             // or contiue with
 
