@@ -5,7 +5,9 @@ import 'package:goole_sign/components/my_textfield.dart';
 import 'package:goole_sign/components/square_tile.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key,required this.onTap});
+
+  final void Function()? onTap;
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -225,11 +227,14 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(
                       width: 5,
                     ),
-                    const Text(
-                      "Register now",
-                      style: TextStyle(
-                        color: Colors.blue,
-                        fontWeight: FontWeight.bold,
+                    GestureDetector(
+                      onTap: widget.onTap,
+                      child: const Text(
+                        "Register now",
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ],
