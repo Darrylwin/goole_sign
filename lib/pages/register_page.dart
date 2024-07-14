@@ -16,11 +16,11 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   // text editing controllers
   final emailController = TextEditingController();
-
   final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
 
   // sign user up method
-  void signUserup() async {
+  void signUserUp() async {
     // show loading circle
     showDialog(
       context: context,
@@ -34,10 +34,16 @@ class _LoginPageState extends State<LoginPage> {
     // try creating user
 
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailController.text,
-        password: passwordController.text,
-      );
+      // check if passwords are the same
+      if (passwordController.text == confirmPasswordController.text) {
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: emailController.text,
+          password: confirmPasswordController.text,
+        );
+      } else {
+        // show messages, passwords aren't the same
+        showErrorMessage("Passwords don't match");
+      }
       // pop the loading circle
       Navigator.pop(context);
     } on FirebaseAuthException catch (e) {
@@ -125,33 +131,11 @@ class _LoginPageState extends State<LoginPage> {
                   height: 10,
                 ),
 
-                // password textfield
+                // confirm password textfield
                 MyTextfield(
-                  controller: passwordController,
+                  controller: confirmPasswordController,
                   obscureText: true,
                   hintText: "Confirm Password",
-                ),
-
-                const SizedBox(
-                  height: 10,
-                ),
-
-                // forgot password
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 25.0,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Text(
-                        "Forgot Password ?",
-                        style: TextStyle(
-                          color: Colors.grey.shade600,
-                        ),
-                      ),
-                    ],
-                  ),
                 ),
 
                 const SizedBox(
@@ -160,7 +144,7 @@ class _LoginPageState extends State<LoginPage> {
 
                 // sign in button
                 MyButton(
-                  onTap: signUserup,
+                  onTap: signUserUp,
                   text: "Sign Up",
                 ),
 
