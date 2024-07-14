@@ -5,7 +5,7 @@ import 'package:goole_sign/components/my_textfield.dart';
 import 'package:goole_sign/components/square_tile.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({super.key});
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -18,12 +18,12 @@ class _LoginPageState extends State<LoginPage> {
   final passwordController = TextEditingController();
 
   // sign user in method
-  void SignUserIn() async {
+  void signUserIn() async {
     // show loading circle
     showDialog(
       context: context,
       builder: (context) {
-        return Center(
+        return const Center(
           child: CircularProgressIndicator(),
         );
       },
@@ -122,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
 
               // sign in button
               MyButton(
-                onTap: SignUserIn,
+                onTap: signUserIn,
               ),
 
               const SizedBox(
@@ -164,7 +164,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
 
               // google - apple sign in button
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   // google button
@@ -172,7 +172,7 @@ class _LoginPageState extends State<LoginPage> {
                     imagePath: 'assets/images/google.png',
                   ),
 
-                  const SizedBox(
+                  SizedBox(
                     width: 25,
                   ),
 

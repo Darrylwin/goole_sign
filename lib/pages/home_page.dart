@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -24,13 +23,13 @@ class HomePage extends StatelessWidget {
             icon: const Icon(Icons.logout),
           ),
         ],
-        title: Text("Home"),
+        title: const Text("Home"),
         centerTitle: true,
       ),
       body: Center(
         child: Text(
-          "LOGED IN AS : ${user.email!}",
-          style: TextStyle(
+          "LOGGED IN AS : ${user.email!}",
+          style: const TextStyle(
             fontSize: 20,
           ),
         ),
