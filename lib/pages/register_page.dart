@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                 const Center(
                   child: Icon(
                     Icons.lock,
-                    size: 100,
+                    size: 50,
                   ),
                 ),
 
