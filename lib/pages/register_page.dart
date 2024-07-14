@@ -93,9 +93,9 @@ class _LoginPageState extends State<LoginPage> {
                   height: 20,
                 ),
 
-                // welcome back you have been missed
+                // Let's create an account
                 Text(
-                  "welcome back you've been missed",
+                  "Let's create an account",
                   style: TextStyle(color: Colors.grey[700], fontSize: 16),
                 ),
 
@@ -161,6 +161,7 @@ class _LoginPageState extends State<LoginPage> {
                 // sign in button
                 MyButton(
                   onTap: signUserup,
+                  text: "Sign Up",
                 ),
 
                 const SizedBox(
