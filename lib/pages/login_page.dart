@@ -31,11 +31,18 @@ class _LoginPageState extends State<LoginPage> {
 
     // try sign in
 
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: emailController.text,
-      password: passwordController.text,
-    );
-
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: emailController.text,
+        password: passwordController.text,
+      );
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "user-not-found") {
+        print("No user found for this email");
+      } else if (e.code == "wrong-password") {
+        print("Wrong password");
+      }
+    }
     // pop the circle
     Navigator.pop(context);
   }
