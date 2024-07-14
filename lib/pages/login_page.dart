@@ -4,16 +4,16 @@ import 'package:goole_sign/components/my_button.dart';
 import 'package:goole_sign/components/my_textfield.dart';
 import 'package:goole_sign/components/square_tile.dart';
 
-class LoginPage extends StatefulWidget {
-  LoginPage({super.key,required this.onTap});
+class RegisterPage extends StatefulWidget {
+  RegisterPage({super.key, required this.onTap});
 
   final void Function()? onTap;
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   // text editing controllers
   final emailController = TextEditingController();
 

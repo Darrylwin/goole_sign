@@ -4,23 +4,23 @@ import 'package:goole_sign/components/my_button.dart';
 import 'package:goole_sign/components/my_textfield.dart';
 import 'package:goole_sign/components/square_tile.dart';
 
-class RegisterPage extends StatefulWidget {
-  RegisterPage({super.key,required this.onTap});
+class LoginPage extends StatefulWidget {
+  LoginPage({super.key, required this.onTap});
 
   final void Function()? onTap;
 
   @override
-  State<RegisterPage> createState() => _RegisterPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
+class _LoginPageState extends State<LoginPage> {
   // text editing controllers
   final emailController = TextEditingController();
 
   final passwordController = TextEditingController();
 
-  // sign user in method
-  void signUserIn() async {
+  // sign user up method
+  void signUserup() async {
     // show loading circle
     showDialog(
       context: context,
@@ -31,7 +31,7 @@ class _RegisterPageState extends State<RegisterPage> {
       },
     );
 
-    // try sign in
+    // try creating user
 
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -125,6 +125,17 @@ class _RegisterPageState extends State<RegisterPage> {
                   height: 10,
                 ),
 
+                // password textfield
+                MyTextfield(
+                  controller: passwordController,
+                  obscureText: true,
+                  hintText: "Confirm Password",
+                ),
+
+                const SizedBox(
+                  height: 10,
+                ),
+
                 // forgot password
                 Padding(
                   padding: const EdgeInsets.symmetric(
@@ -149,7 +160,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
                 // sign in button
                 MyButton(
-                  onTap: signUserIn,
+                  onTap: signUserup,
                 ),
 
                 const SizedBox(
@@ -219,7 +230,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Not a member ?",
+                      "Already have an account ?",
                       style: TextStyle(
                         color: Colors.grey[700],
                       ),
@@ -230,7 +241,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     GestureDetector(
                       onTap: widget.onTap,
                       child: const Text(
-                        "Register now",
+                        "Login now",
                         style: TextStyle(
                           color: Colors.blue,
                           fontWeight: FontWeight.bold,
